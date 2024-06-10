@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="mx-10">
+        <div class="row d-flex justify-content-space-evenly mt-5 mb-2 mx-1">
+            {% for s in supplements %}
+                <div class="card rounded-0 col-3 mb-5 me-1 mx-1" style="width: 18rem;">
+                  <div class="text-center">
+                      <img src="{{ s.image.url }}" class="card-img-top" alt="img" style="height: 15rem;">
+                  </div>
+                  <div class="card-body">
+                    <h5 class="card-title">{{ s.name }}</h5>
+                    <p class="card-text">$ {{ s.price }}</p>
+                    <a href="/edit_supplement/{{ s.id }}" class="btn btn-dark">Edit</a>
+                    <a href="/delete_supplement/{{ s.id }}" class="btn btn-dark">Delete</a>
+                    <a href="/supplement_details/{{ s.id }}" class="btn btn-dark">Details</a>
+                  </div>
+                </div>
+            {% endfor %}
+        </div>
+        <a href="/add_supplement/" class="btn btn-outline-dark rounded-5" style="width: 100%">Add New Supplement</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="px-5 mx-10 my-5 p-5 border-custom border-top-0 border-bottom-0">
+        <img src="../../media/photos/square.png" alt="img" style="width: 10rem">
+        <p style="font-size: 4rem">Ask for event</p>
+        <p class="fs-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias, aliquam cum dolorem doloremque eum ex ipsum labore magnam mollitia odio optio quae quibusdam quis repellat reprehenderit rerum!</p>
+        <form class="form" method="post" enctype="multipart/form-data">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <div class="text-end">
+                <button class="btn btn-dark rounded-0">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

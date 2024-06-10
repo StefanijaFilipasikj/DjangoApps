@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="d-flex justify-content-around py-5">
+    {% for r in repairs %}
+        <div class="card col-4 bg-dark text-white rounded-1" style="width: 16rem; border: 1px solid deeppink">
+          <img src="{{ r.image.url }}" class="card-img-top rounded-top-1" alt="image" style="width: 15.9rem; height: 16rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{ r.code }}</h5>
+            <p class="card-text">{{ r.automobile.type }}</p>
+            <p class="card-text">{{ r.problem_desc }}</p>
+            <a class="btn rounded-0 btn-fix"><span class="fa fa-wrench"></span> Fix</a>
+          </div>
+        </div>
+    {% endfor %}
+    </div>
+
+
+    <div class="container p-5">
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+
+{% endblock %}

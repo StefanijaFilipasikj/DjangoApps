@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Air Balloon App</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .nav-link{color: white;}
+            .bg-blueish{background-color: rgb(43, 100, 119);}
+            .bg-lightblue{background-color: rgb(163, 198, 210);}
+            .bg-lightgray{background-color: rgb(239, 239, 239);}
+            .bg-verylightgray{background-color: rgb(252, 252, 252);}
+            .px-15rem{padding: 0 15rem;}
+            .pb-13rem{padding-bottom: 13rem;}
+            .pt-8rem{padding-top: 8rem;}
+
+            .bg-balloon{
+                background-image: url("https://www.tdk.com/en/tech-mag/sites/default/files/2023-05/shutterstock_1033306540s.jpg");
+                background-size: cover;
+                background-position-y: -2rem;
+                filter: opacity(85%);
+            }
+
+            .btn-tiny{
+                font-size: 13px;
+                font-weight: bold;
+            }
+            .btn-tiny-bgp{
+                padding: 0.7rem 2.4rem;
+            }
+            .btn-tiny-smp{
+                padding: 0.3rem 2.4rem;
+            }
+            .btn-custom{
+                border: 5px solid;
+                border-image: linear-gradient(120deg, orangered, deeppink) 1;
+                background-image: linear-gradient(120deg, orangered, deeppink);
+                color: transparent;
+                background-clip: text;
+            }
+        </style>
+    </head>
+    <body class="p-0">
+        <div class="bg-balloon text-white">
+            <nav class="navbar navbar-expand px-15rem py-2 text-white">
+              <div class="container-fluid">
+                <div class="">
+                    <a class="navbar-brand nav-link" href="#">Home</a>
+                </div>
+                <div class="">
+                  <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Flights
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Option 1</a></li>
+                        <li><a class="dropdown-item" href="#">Option 2</a></li>
+                        <li><a class="dropdown-item" href="#">Option 3</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Planes
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Option 1</a></li>
+                        <li><a class="dropdown-item" href="#">Option 2</a></li>
+                        <li><a class="dropdown-item" href="#">Option 3</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About Us
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Option 1</a></li>
+                        <li><a class="dropdown-item" href="#">Option 2</a></li>
+                        <li><a class="dropdown-item" href="#">Option 3</a></li>
+                      </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Contact
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Option 1</a></li>
+                        <li><a class="dropdown-item" href="#">Option 2</a></li>
+                        <li><a class="dropdown-item" href="#">Option 3</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+            <div class="text-center pb-13rem pt-8rem">
+                <p class="fs-6 mb-0">Best Airline Company</p>
+                <span>_____</span>
+                <p style="font-weight: lighter; font-size: 4rem;">Hot Air Balloon Rides</p>
+                <button class="btn btn-dark rounded-5 btn-tiny btn-tiny-bgp">GET YOUR TICKET</button>
+            </div>
+
+
+        </div>
+
+        <div class="bg-verylightgray">
+            {%  block content %}
+            {% endblock %}
+        </div>
+
+        <footer class="bg-blueish text-center py-4 text-white mt-5">
+            &copy; Copyright 2022 FINKI DNICK - All Rights Reserved
+        </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </body>
+</html>

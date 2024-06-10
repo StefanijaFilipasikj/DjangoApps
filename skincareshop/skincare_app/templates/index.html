@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block nav-content %}
+    <div class="text-end m-10">
+        <p class="fs-1 m-0">New Purito</p>
+        <p class="fs-1 m-0">Unscented Collection</p>
+        <button class="btn btn-outline-dark btn-padded bg-white-tr">SHOP NOW</button>
+    </div>
+{% endblock %}
+
+{%  block content %}
+    <div class="mx-10">
+        <h2 class="my-4">New Releases</h2>
+        <div class="row d-flex justify-content-between mb-5 mx-1">
+            {% for p in products %}
+            <div class="card rounded-0 border-0 p-3 col-4 mb-4" style="width: 20rem;">
+              <span class="fa fa-heart"></span>
+              <img src="{{ p.image.url }}" class="card-img-top" alt="img">
+              <div class="card-body">
+                <h5 class="card-title">{{ p.name }}</h5>
+                <p class="card-text">{{ p.description }}</p>
+                <hr />
+                <p class="card-text">$ {{ p.price }}</p>
+                <a href="#" class="btn btn-dark rounded-0 py-2 btn-padded-x btn-custom fa fa-shopping-cart"> Buy</a>
+              </div>
+            </div>
+        {% endfor %}
+        </div>
+        <div class="d-flex justify-content-between mt-5 p-0">
+            <div class="pe-5">
+                <h2>Why Skincare?</h2>
+                <p>Your skin acts as a barrier to our internal systems that are imperative to our health and well-being. Taking steps to properly care for our skin helps to ensure this important barrier is strong. When the skin is dry or irritated, cracks can occur, which make you more prone to infection.</p>
+                <p>Your skin also plays a vital role in protecting you from the sun and it’s harmful rays. That’s why sunscreen is recommended for adults and kids to wear daily. After all, skin cancer is the most common type of cancer and can occur in people of all ages.</p>
+                <button class="btn btn-dark btn-padded">READ MORE</button>
+            </div>
+            <div class="col-6">
+                <img src="../../media/photos/skincare.jpg" alt="img" style="width: 100%"/>
+            </div>
+        </div>
+    </div>
+{% endblock %}

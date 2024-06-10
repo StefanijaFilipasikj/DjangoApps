@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="mt-5" style="font-size: 4rem;">Book Details</h1>
+    <div class="d-flex justify-content-between">
+        <div class="col-5">
+            <img src="{{ book.image.url }}" alt="img" style="width: 100%; height: 40rem;">
+        </div>
+        <div class="col-5 my-auto">
+            <p class="fs-1 fw-bold">{{ book.title }}</p>
+            <p class="fs-4"><b>Isbn:</b> {{ book.isbn }}</p>
+            <p class="fs-4"><b>Year of publishing:</b> {{ book.year_of_publishing }}</p>
+            <p class="fs-4"><b>Publishing house:</b> {{ book.publishing_house.name }}</p>
+            <p class="fs-4">$ {{ book.price }}</p>
+            <br>
+            <p class="fs-3 fw-bold">More Details:</p>
+            <p class="fs-4"><b>Number of pages:</b> {{ book.num_pages }}</p>
+            <p class="fs-4"><b>Dimensions:</b> {{ book.dimensions }}</p>
+            <p class="fs-4"><b>Cover type:</b> {{ book.book_cover_type }}</p>
+            <p class="fs-4"><b>Category:</b> {{ book.category }}</p>
+        </div>
+    </div>
+{% endblock %}

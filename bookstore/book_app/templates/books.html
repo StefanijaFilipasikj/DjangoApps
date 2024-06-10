@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="font-size: 7rem; color: rgb(70,50,43)">Books</h1>
+    <div class="row d-flex justify-content-between">
+        {% for b in books %}
+            <div class="card rounded-0 col-4 mx-3" style="width: 18rem;">
+              <img src="{{ b.image.url }}" class="card-img-top" alt="img" style="height: 24rem;">
+              <div class="card-body">
+                <h5 class="card-title">{{ b.title }}</h5>
+                <p class="card-text">$ {{ b.price }}</p>
+                <a href="book_delete/{{ b.id }}" class="btn btn-dark bg-brown">Delete</a>
+                <a href="book_details/{{ b.id }}" class="btn btn-dark bg-brown">Details</a>
+              </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <br>
+    <h1 class="mt-5 text-center" style="font-size: 4rem; color: rgb(70,50,43)">Add new book</h1>
+    <form class="form bg-warm" style="padding: 3rem 8rem" method="post" enctype="multipart/form-data">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-dark bg-brown" style="width: 100%">Add</button>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{#    <div class="d-flex justify-content-between px-15rem pt-5">#}
+    <div class="px-15rem pt-5">
+        {% for f in flights %}
+            <div class="card bg-dark text-white m-4" style="width: 18rem; display: inline-block">
+              <img src="{{MEDIA_URL}}{{ f.image.url }}" class="card-img-top" alt="balloon" style="height: 18rem; width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title">{{ f.code }}</h5>
+                <p class="card-text text-secondary">{{ f.from_airport }} - {{ f.to_airport }}</p>
+                <p class="card-text">Some quick example explanation to the flight.</p>
+                <a href="#" class="btn btn-dark rounded-0 btn-custom"><span class="fa fa-plane"></span> Book</a>
+              </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="px-15rem my-5">
+        <form class="form" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+    </div>
+
+    <div>
+        <input type="checkbox" class="form-input">
+    </div>
+
+{% endblock %}

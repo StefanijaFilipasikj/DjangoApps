@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="px-15 py-4">
+        <h1 class="m-0 text-center fw-bolder">Out of stock</h1>
+        <p class="text-center text-lime fw-bolder fs-1" style="margin-top: -45px">_____</p>
+
+        <div class="row d-flex justify-content-between">
+            {% for o in out_of_stock %}
+                <div style="width: 15rem;" class="text-center m-2 mb-4 col-3">
+                    <img src="../../media/{{ o.image }}" alt="img" style="width: 15rem; height: 15rem">
+                    <p class="mt-2 mb-0">{{ o.name }}</p>
+                    <h6>${{ o.price }}</h6>
+                </div>
+            {% endfor %}
+        </div>
+
+        <form class="form" method="POST" enctype="multipart/form-data">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <button type="submit" class="btn btn-dark bg-lime border-0" style="width: 100%">Add</button>
+        </form>
+
+    </div>
+{% endblock %}

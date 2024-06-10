@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Varela Round' rel='stylesheet'>
+    <style>
+        .px-10{padding: 0 10rem}
+        .mx-10{margin: 0 10rem}
+        .fs-0{font-size: 4.5rem;}
+        .border-custom{border: 2px dotted darkgray;}
+        .side-text{transform: rotate(90deg); height: 20px; margin-left: -1.5rem; margin-top: 2rem}
+        .bg-cover{
+            background-image: url("../../media/photos/cover.jpg");
+            background-size: cover;
+            background-position-y: -7.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white text-black px-4">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/index">Eventualy</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse navbar-text" id="navbarText">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link border-bottom pb-0 me-2" href="/index">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link border-bottom pb-0 me-2" href="/add_event">Ask for event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link border-bottom pb-0 me-2" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link border-bottom pb-0 me-2" href="#">Contact us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link border-bottom pb-0 me-2" href="#">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="#"><span class="fa fa-facebook"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="#"><span class="fa fa-twitter"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="#"><span class="fa fa-instagram"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-5" href="#"><span class="fa fa-linkedin"></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+    {# ne znam dali postoi dr nacin razlicni margini da imaat kartickite#}
+    <script>
+        let cards = document.getElementsByClassName('card');
+        for (let i = 0; i < cards.length; i++) {
+            let random = Math.floor(Math.random() * 100);
+            cards[i].style.paddingTop = random + 'px';
+        }
+    </script>
+</body>
+</html>

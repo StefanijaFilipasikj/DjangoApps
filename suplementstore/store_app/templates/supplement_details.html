@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="mx-10 py-5">
+        <p class="fs-2">Supplement Details</p>
+        <div class="d-flex justify-content-between">
+            <div class="col-6">
+                <img src="{{ supplement.image.url }}" alt="img">
+            </div>
+            <div class="col-5 pt-5">
+                <p class="fs-5 fw-bold">{{ supplement.name }}</p>
+                <p class="fs-5">{{ supplement.manufacturer.name }}</p>
+                <p class="fs-5">$ {{ supplement.price }}</p>
+                <p class="fs-5">Available: {{ supplement.available }}</p>
+                <br>
+                <p class="fs-5">Nutritional Value:</p>
+                <p class="fs-6">Calories: {{ supplement.nutritional_value.calories }}</p>
+                <p class="fs-6">Protein: {{ supplement.nutritional_value.proteins }}</p>
+                <p class="fs-6">Carbohydrates: {{ supplement.nutritional_value.carbohydrates }}</p>
+                <p class="fs-6">Fats: {{ supplement.nutritional_value.fats }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
